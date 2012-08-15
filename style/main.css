@@ -1,0 +1,130 @@
+@import url('less-framework.css');
+@import url(http://fonts.googleapis.com/css?family=Lato:300|Open+Sans:300,800);
+
+a {
+	color:			rgba(0,0,0,0.5);
+}
+
+*
+{
+	font-family: 	'Ubuntu', sans-serif;
+}
+
+strong
+{
+	color:			#336699;
+}
+
+body {
+	background-image:	url(http://www.hdwallpapers.in/walls/capitol_building_washington_d_c_-normal.jpg);
+}
+
+#topbar {
+	position:		fixed;
+	width:			89%;
+	background:		rgba(0, 0, 0, 0.8);
+	padding:		10px 80px;
+	border-bottom:	2px solid black;
+}
+
+.circle {
+	width:			55px;
+	height:			55px;
+	border-radius:	50%;
+}
+
+#banner-circle {
+	float:			left;
+	display:		inline-block;
+	background:		#336699;
+	box-shadow:		0px 3px 0px #ABABAB;
+	margin:			0px 10px 0px 0px;
+}
+
+#banner h1 {
+	vertical-align:	top;
+	display:		inline-block;
+	font-size:		26px;
+	line-height:	28px;
+	color:			whitesmoke;
+}
+
+.subtle-header {
+	color:			grey;
+	display:		block;
+	font-family: 	'Lato', sans-serif;
+	font-weight: 	300;
+}
+
+.subtle-text {
+	font-family: 	'Lato', sans-serif;
+	font-weight: 	300;
+	font-size:		26px;
+	line-height:	28px;
+	display:		block;
+	color:			white;
+}
+
+#navigation {
+	z-index:		9;
+	margin-top:		-30px;
+	text-align:		right;
+}
+
+#menu {
+	list-style:		none;
+}
+
+#menu li {
+	display:		inline-block;
+	font-size:		16px;
+	margin:			0px 5px;
+}
+
+#menu li a {
+	font-family: 	'Open Sans', sans-serif;
+	font-weight: 	300;
+	background:		rgba(0,0,0,0.8);
+	border-radius:	5px;
+	padding:		5px 10px;
+	text-decoration:none;
+	text-transform:	uppercase;
+	color:			whitesmoke;
+}
+
+.block {
+	padding:		30px 80px;
+}
+
+#title {
+	top: 			82px;
+	position: 		fixed;
+}
+
+#title h1 {
+	color:			whitesmoke;
+}
+
+#wrapper {
+	position:		absolute;
+	top:			242px;
+}
+
+#main {
+	background:		whitesmoke;
+}
+
+#main h2 {
+	color:			#336699;
+}
+
+#main p {
+	font-family: 	'Open Sans', sans-serif;
+	font-weight: 	300;
+	color:			#111;
+	margin:			20px 0px;
+}
+
+#contact {
+	background:		#222222;
+}
