@@ -17,6 +17,7 @@
       <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="JMSSecurityExtraBundle">JMS\SecurityExtraBundle\JMSSecurityExtraBundle</parameter>
+      <parameter key="SitePortfolioBundle">Site\PortfolioBundle\SitePortfolioBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -35,7 +36,7 @@
     <parameter key="mailer_user"></parameter>
     <parameter key="mailer_password"></parameter>
     <parameter key="locale">en</parameter>
-    <parameter key="secret">7763f828f6a7e1d92e3b8f91dc5012f3ef395072</parameter>
+    <parameter key="secret">97e61fd4f8d6cb62b2db1ea4410eddff4</parameter>
     <parameter key="router_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\RouterListener</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
@@ -53,7 +54,7 @@
     <parameter key="translation.loader.xliff.class">Symfony\Component\Translation\Loader\XliffFileLoader</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Bundle\FrameworkBundle\Debug\TraceableEventDispatcher</parameter>
     <parameter key="debug.container.dump">C:/xampp/htdocs/work/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
-    <parameter key="kernel.secret">7763f828f6a7e1d92e3b8f91dc5012f3ef395072</parameter>
+    <parameter key="kernel.secret">97e61fd4f8d6cb62b2db1ea4410eddff4</parameter>
     <parameter key="kernel.trust_proxy_headers">false</parameter>
     <parameter key="session.class">Symfony\Component\HttpFoundation\Session</parameter>
     <parameter key="session.storage.native.class">Symfony\Component\HttpFoundation\SessionStorage\NativeSessionStorage</parameter>
@@ -336,6 +337,7 @@
       <parameter>AsseticBundle</parameter>
       <parameter>SensioFrameworkExtraBundle</parameter>
       <parameter>JMSSecurityExtraBundle</parameter>
+      <parameter>SitePortfolioBundle</parameter>
       <parameter>AcmeDemoBundle</parameter>
       <parameter>WebProfilerBundle</parameter>
       <parameter>SensioDistributionBundle</parameter>
@@ -867,7 +869,7 @@
     </service>
     <service id="form.csrf_provider" class="Symfony\Component\Form\Extension\Csrf\CsrfProvider\SessionCsrfProvider">
       <argument type="service" id="session"/>
-      <argument>7763f828f6a7e1d92e3b8f91dc5012f3ef395072</argument>
+      <argument>97e61fd4f8d6cb62b2db1ea4410eddff4</argument>
     </service>
     <service id="form.type.csrf" class="Symfony\Component\Form\Extension\Csrf\Type\CsrfType">
       <tag name="form.type" alias="csrf"/>
@@ -1928,6 +1930,33 @@
                   <argument type="service" id="templating.loader"/>
                   <argument>JMSSecurityExtraBundle</argument>
                   <argument>C:\xampp\htdocs\work\vendor\bundles\JMS\SecurityExtraBundle/Resources/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+            </argument>
+          </service>
+        </argument>
+        <argument>twig</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service">
+          <service class="Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource" public="false">
+            <tag name="assetic.templating.twig"/>
+            <tag name="assetic.formula_resource" loader="twig"/>
+            <argument type="collection">
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SitePortfolioBundle</argument>
+                  <argument>C:/xampp/htdocs/work/app/Resources/SitePortfolioBundle/views</argument>
+                  <argument>/\.[^.]+\.twig$/</argument>
+                </service>
+              </argument>
+              <argument type="service">
+                <service class="%assetic.directory_resource.class%" public="false">
+                  <argument type="service" id="templating.loader"/>
+                  <argument>SitePortfolioBundle</argument>
+                  <argument>C:\xampp\htdocs\work\src\Site\PortfolioBundle/Resources/views</argument>
                   <argument>/\.[^.]+\.twig$/</argument>
                 </service>
               </argument>

@@ -1,0 +1,8 @@
+# src/Acme/HelloBundle/Resources/config/routing.yml
+staff:
+    pattern:  /staff
+    defaults: { _controller: SitePortfolioBundle:Staff:index }
+
+staff_member:
+    pattern: /staff/{name}
+    defaults: { _controller: SitePortfolioBundle:Staff:name}
