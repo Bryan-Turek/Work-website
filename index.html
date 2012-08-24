@@ -57,6 +57,15 @@
 				var emp = $(this).attr('load-employee');
 				$('<div id="portfolio">Testing</div>').insertAfter("[load-employee='" + emp + "']");
 			});
+			
+			window.onload = function() {
+				if($(location).attr('hash')) {
+					var ref = $(location).attr('hash');
+					console.log(ref);
+					var d = $(ref).offset().top;
+					$("html:not(:animated),body:not(:animated)").animate({ scrollTop: d - 105}, 600);
+				}
+			}
 		});
 		</script>
 		<!--[if lt IE 9]>
