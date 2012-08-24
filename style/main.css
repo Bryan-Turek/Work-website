@@ -15,37 +15,32 @@ strong
 	color:			#336699;
 }
 
-body {
-	background-image:	url(http://www.hdwallpapers.in/walls/capitol_building_washington_d_c_-normal.jpg);
-}
-
 #topbar {
+	z-index:		10;
 	position:		fixed;
 	width:			89%;
-	background:		rgba(0, 0, 0, 0.8);
+	background:		#111;
 	padding:		10px 80px;
-	border-bottom:	2px solid black;
 }
 
 .circle {
-	width:			55px;
+	width:			80px;
 	height:			55px;
-	border-radius:	50%;
+	border-radius:	5px;
 }
 
 #banner-circle {
 	float:			left;
 	display:		inline-block;
-	background:		#336699;
-	box-shadow:		0px 3px 0px #ABABAB;
-	margin:			0px 10px 0px 0px;
+	background:		rgba(0, 0, 0, 0.9);
+	margin:			0px 16px 0px 0px;
 }
 
 #banner h1 {
 	vertical-align:	top;
 	display:		inline-block;
-	font-size:		26px;
-	line-height:	28px;
+	font-size:		18px;
+	line-height:	30px;
 	color:			whitesmoke;
 }
 
@@ -54,6 +49,7 @@ body {
 	display:		block;
 	font-family: 	'Lato', sans-serif;
 	font-weight: 	300;
+	line-height: 	14px;
 }
 
 .subtle-text {
@@ -76,6 +72,7 @@ body {
 }
 
 #menu li {
+	cursor:			pointer;
 	display:		inline-block;
 	font-size:		16px;
 	margin:			0px 5px;
@@ -97,7 +94,7 @@ body {
 }
 
 #title {
-	top: 			82px;
+	top: 			75px;
 	position: 		fixed;
 }
 
@@ -111,20 +108,48 @@ body {
 }
 
 #main {
-	background:		whitesmoke;
+	z-index:		2;
+	background:		#c2c2c2;
 }
 
 #main h2 {
 	color:			#336699;
 }
-
-#main p {
+ 
+p {
 	font-family: 	'Open Sans', sans-serif;
 	font-weight: 	300;
 	color:			#111;
 	margin:			20px 0px;
 }
 
+#secondary {
+	z-index:		3;
+	background:		#187C72;
+}
+
+#last {
+	z-index:		4;
+	background:		#F37E1D;
+}
+
 #contact {
+	z-index:		5;
 	background:		#222222;
+}
+
+#employee-list {
+	list-style:		none;
+	margin:			30px 0px;
+}
+
+#employee-list li {
+	font-size:		64px;
+	cursor:			pointer;
+	line-height:	64px;
+	-webkit-transition:color 0.25s ease-in;
+}
+
+#employee-list li:hover {
+	color:			#cdcdcd;
 }

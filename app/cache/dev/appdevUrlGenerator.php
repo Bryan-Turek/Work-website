@@ -33,7 +33,8 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
-       'site_portfolio_default_index' => true,
+       'staff' => true,
+       'staff_member' => true,
     );
 
     /**
@@ -157,8 +158,13 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
     }
 
-    private function getsite_portfolio_default_indexRouteInfo()
+    private function getstaffRouteInfo()
     {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Site\\PortfolioBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/hello',  ),));
+        return array(array (), array (  '_controller' => 'Site\\PortfolioBundle\\Controller\\StaffController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/staff',  ),));
+    }
+
+    private function getstaff_memberRouteInfo()
+    {
+        return array(array (  0 => 'name',), array (  '_controller' => 'Site\\PortfolioBundle\\Controller\\StaffController::nameAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/staff',  ),));
     }
 }
